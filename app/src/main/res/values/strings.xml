@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="no_internet">No Internet</string>
+
+    <string name="flaticon_attribution">
+        <a href="https://www.flaticon.com/free-icons/no-conexion">No conexion icons created by berkahicon - Flaticon</a>
+    </string>
+    <string name="oopss">Oopss...</string>
+    <string name="retry">Retry</string>
+    <string name="hello_world">Hello World</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="_7_days_weather_forecast">7 Days Weather Forecast</string>
+    <string name="refresh">Refresh</string>
+    <string name="weather_icon">Weather Icon</string>
+    <string name="refresh_forecast">Refresh Forecast</string>
+</resources>

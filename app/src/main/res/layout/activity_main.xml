@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="12dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radio_group_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_celsius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/celsius" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_fahrenheit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/fahrenheit" />
+
+        </RadioGroup>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <include
+            android:id="@+id/current_card"
+            layout="@layout/layout_current_weather_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/button_refresh"
+            app:layout_constraintEnd_toStartOf="@id/guideline_v85"
+            app:layout_constraintStart_toEndOf="@id/guideline_v15"
+            app:layout_constraintTop_toBottomOf="@id/radio_group_unit" />
+
+        <ImageView
+            android:id="@+id/image_loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toTopOf="@id/button_refresh"
+            app:layout_constraintEnd_toStartOf="@id/guideline_v85"
+            app:layout_constraintStart_toEndOf="@id/guideline_v15"
+            app:layout_constraintTop_toBottomOf="@id/radio_group_unit" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v85"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <Button
+            android:id="@+id/button_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/refresh"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_h40"
+            app:layout_constraintEnd_toStartOf="@id/guideline_v85"
+            app:layout_constraintStart_toEndOf="@id/guideline_v15" />
+
+        <TextView
+            android:id="@+id/text_forecast_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/_7_days_weather_forecast"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/recycler_forecast"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_refresh"
+            app:layout_constraintVertical_bias="0.65" />
+
+        <Button
+            android:id="@+id/button_refresh_forecast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/refresh_forecast"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_forecast_title" />
+
+        <ImageView
+            android:id="@+id/image_loading_forecast"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_refresh_forecast" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_forecast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_refresh_forecast" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

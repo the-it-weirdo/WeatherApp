@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_oopss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/oopss"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/image_no_internet"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:contentDescription="@string/no_internet"
+        android:src="@drawable/no_internet"
+        app:layout_constraintEnd_toEndOf="@+id/text_oopss"
+        app:layout_constraintHeight_percent="0.50"
+        app:layout_constraintStart_toStartOf="@+id/text_oopss"
+        app:layout_constraintTop_toBottomOf="@+id/text_oopss"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/text_no_internet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/no_internet"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/image_no_internet"
+        app:layout_constraintStart_toStartOf="@+id/image_no_internet"
+        app:layout_constraintTop_toBottomOf="@id/image_no_internet" />
+
+    <Button
+        android:id="@+id/button_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/retry"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/text_no_internet"
+        app:layout_constraintStart_toStartOf="@+id/text_no_internet"
+        app:layout_constraintTop_toBottomOf="@id/text_no_internet" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
